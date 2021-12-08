@@ -1,39 +1,39 @@
-class definitionModule:
-    def init(self, name="", amount=0, price=0.00,calculatedPrice=0.00):
-        self.name = name
-        self.amount = amount
-        self.price = self.price()
-        self.calculatedPrice = self.totalPrice()
+class definitionModule: #Class definition
+    def init(self, name="", amount=0, price=0.00,calculatedPrice=0.00): #Initializer methods 
+        self.__name = name #set hidden attributes
+        self.__amount = amount
+        self.__price = self.price()
+        self.calculatedPrice = self.totalPrice() #set public attributes
 
-    def priceList(self):
-     if self.name == "Dry Cured Iberian Ham":
-         self.price = 177.80
-     elif self.name =="Wagyu Steaks":
-         self.price = 450.00
-     elif self.name == "Matsutake Mushrooms":
-         self.price = 272.00
-     elif self.name == "Kopi Luwak Coffee":
-         self.price = 306.50
-     elif self.name == "Moose Cheese":
-         self.price = 487.20
-     elif self.name == "White Truffles":
-         self.price = 3600.00
-     elif self.name == "Blue Fin Tuna":
-         self.price = 3603.00
-     elif self.name == "Le Bonnotte Potatoes":
-         self.price = 270.81
-     else:
-        self.price = 0.00
+    def priceList(self): #private list storing the list of menu
+     if self.__name == "Dry Cured Iberian Ham":
+         self.__price = 177.80
+     elif self.__name =="Wagyu Steaks":
+         self.__price = 450.00
+     elif self.__name == "Matsutake Mushrooms":
+         self.__price = 272.00
+     elif self.__name == "Kopi Luwak Coffee":
+         self.__price = 306.50
+     elif self.__name == "Moose Cheese":
+         self.__price = 487.20
+     elif self.__name == "White Truffles":
+         self.__price = 3600.00
+     elif self.__name == "Blue Fin Tuna":
+         self.__price = 3603.00
+     elif self.__name == "Le Bonnotte Potatoes":
+         self.__price = 270.81
+     else: #other then the menu above, will count as 0
+        self.__price = 0.00
 
-    def getName(self):
-        return self.name
+    def getName(self): #accessor methods 
+        return self.__name
     def getAmount(self):
-        return self.amount
+        return self.__amount
     def getPrice(self):
-        return self.price
+        return self.__price
     def getcalculatedPrice(self):
         return self.calculatedPrice
 
-    def totalPrice(self):
-        self.calculatedPrice = self.amount * self.price
+    def totalPrice(self): #function to calculate the total
+        self.calculatedPrice = self.__amount * self.__price
         return self.calculatedPrice
